@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import BacteriasList from './components/BacteriasList'
 import InstrumentsList from './components/InstrumentsList'
+import TeamsList from './components/TeamsList'
 import 'semantic-ui-css/semantic.min.css';
 import { Container } from 'semantic-ui-react';
 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
             <Route exact path="/bacterias" component={BacteriasList} />
             <Route exact path="/instruments" component={InstrumentsList} />
+            <Route exact path="/teams" component={TeamsList} />
         </Switch>
       </Router>
     </Container>

@@ -28,8 +28,8 @@ export default function BacteriasList() {
     ) : (
         <Container>
             <Card.Group>
-             { bacterias.map(bacteria => (
-                 <Card key={bacteria.id}>
+             { bacterias.map((bacteria, index) => (
+                 <Card key={index.toString()}>
                      <Card.Content>
                          <Card.Header>
                             <h2>{bacteria.name}</h2>
