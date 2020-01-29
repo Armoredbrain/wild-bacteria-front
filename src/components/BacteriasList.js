@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Container, Card } from 'semantic-ui-react';
+import { Container, Card, Image } from 'semantic-ui-react';
 
 export default function BacteriasList() {
     const [bacterias, setBacterias] = useState([]);
@@ -32,8 +32,9 @@ export default function BacteriasList() {
                  <Card key={bacteria.id}>
                      <Card.Content>
                          <Card.Header>
-                             <h2>{bacteria.name}</h2>
+                            <h2>{bacteria.name}</h2>
                          </Card.Header>
+                         <Image src={"assets/img/" + bacteria.avatar}/>
                      </Card.Content>
                  </Card>
              ))}
