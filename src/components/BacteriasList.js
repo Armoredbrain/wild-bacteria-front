@@ -27,12 +27,17 @@ export default function BacteriasList() {
         </div>
     ) : (
         <Container>
-             {console.log(bacterias)}
+            <Card.Group>
              { bacterias.map(bacteria => (
                  <Card key={bacteria.id}>
-                     {bacteria.name}
+                     <Card.Content>
+                         <Card.Header>
+                             <h2>{bacteria.name}</h2>
+                         </Card.Header>
+                     </Card.Content>
                  </Card>
              ))}
+             </Card.Group>
         </Container>
     )
 }
