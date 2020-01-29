@@ -31,14 +31,14 @@ export default function TeamsList() {
              { teams.map((team, index) => (
                  <Card key={index.toString()}>
                      <Card.Content>
-                         <Card.Header>
-                            <h2>{team.name}</h2>
-                         </Card.Header>
-                         {team.bacterias.map((bacteria, index) => (
-                             <div key={index.toString()}>
-                                 <h5>{bacteria}</h5>
-                             </div>
-                         ))}
+                        <Card.Header>
+                        <h2>{team.name}</h2>
+                        </Card.Header>
+                        { team.bacterias.map((bacteria, index) => (
+                            <div key={index.toString()}>
+                                {bacteria.name}
+                            </div>    
+                        ))}
                      </Card.Content>
                  </Card>
              ))}

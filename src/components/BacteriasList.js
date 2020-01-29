@@ -35,8 +35,7 @@ export default function BacteriasList() {
                             <h2>{bacteria.name}</h2>
                          </Card.Header>
                          <Image src={"assets/img/" + bacteria.avatar}/>
-                         <p>{bacteria.instrument}</p>
-                         <p>{bacteria.team}</p>
+                         <p>instrument : {bacteria.instrument.name}</p>
                      </Card.Content>
                  </Card>
              ))}
