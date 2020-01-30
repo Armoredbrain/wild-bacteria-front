@@ -1,37 +1,64 @@
 import React, { useState } from 'react';
-import { Container, Image } from 'semantic-ui-react';
+import { Container, Image, Header, Button } from 'semantic-ui-react';
 import ProfileChanger from './components/ProfileChanger';
+import NameChanger from './components/NameChanger';
+import axios from 'axios';
 
 export default function BacteriaView() {
 
     const images= [
-        './assets/img/bacteria_1.jpg',
-        './assets/img/bacteria_2.jpg',
-        './assets/img/bacteria_3.jpg',
-        './assets/img/bacteria_4.jpg',
-        './assets/img/bacteria_5.jpg',
+        'bacteria_1.jpg',
+        'bacteria_2.jpg',
+        'bacteria_3.jpg',
+        'bacteria_4.jpg',
+        'bacteria_5.jpg',
     ]
 
-    const [profileImage, setProfileImage] = useState(images[0]);
+    const [profileImage, setProfileImage] = useState('');
+    const [profileName, setProfileName] = useState('')
 
     function handleImageChange(profileImage) {
         setProfileImage(profileImage)
     }
 
+    function handleNameChange(profileName) {
+        setProfileName(profileName)
+    }
+
+    function handleValidate() {
+        axios
+            .post(`https://127.0.0.1:8000/api/bacterias`, {
+                name: profileName,
+                avatar: profileImage,
+            })
+            .then(function (response) {
+                alert("bacteria alive")
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
     return (
         <Container>
-                <Image src={profileImage} 
-                    style={{
-                        marginRight: "auto",
-                        marginLeft: "auto",
-                        marginBottom: "4%"
-                    }}
-                    centered circular
-                />
+            <Image src={`./assets/img/${profileImage}`} 
+                style={{
+                    marginRight: "auto",
+                    marginLeft: "auto",
+                    marginBottom: "4%"
+                }}
+                centered circular
+            />
+            <Header>{profileName}</Header>
+            <NameChanger 
+                handleNameChange={handleNameChange}
+            />
             <ProfileChanger 
                 handleImageChange={handleImageChange} 
                 images={images}
             />
+            <Button onClick={handleValidate}>Validate</Button>
         </Container>
     )
 }
