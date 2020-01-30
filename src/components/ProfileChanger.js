@@ -1,13 +1,24 @@
 import React from 'react';
+import { Image } from 'semantic-ui-react';
 
-class ProfileChanger extends Component {
-    render() {
-        return (
-            <div className="ProfileChanger">
-                <h3>Component Connected</h3>
-            </div>
-        )
-    }
+export default function ProfileChanger({images, handleImageChange}) {
+    
+    return (
+        <div className="ProfileChanger">
+            <Image.Group
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between'
+                }}
+            >
+                {images.map((image, index) => {
+                    return (
+                        <Image src={image} alt="bacteria" circular key={index.toString()}
+                            onClick={() => handleImageChange(image)}
+                        />
+                    )
+                })}
+            </Image.Group>
+        </div>
+    )  
 }
-
-export default ProfileChanger;
