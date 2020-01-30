@@ -8,6 +8,7 @@ import BacteriasList from './components/BacteriasList';
 import InstrumentsList from './components/InstrumentsList';
 import TeamsList from './components/TeamsList';
 import BacteriaView from './BacteriaView';
+import ProfileChanger from './components/ProfileChanger';
 import Nav from './components/Nav';
 import 'semantic-ui-css/semantic.min.css';
 import { Container } from 'semantic-ui-react';

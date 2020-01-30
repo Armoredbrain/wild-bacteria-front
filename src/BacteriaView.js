@@ -16,6 +16,7 @@ export default function BacteriaView() {
 
     function handleAvatarChange(event) {
         setAvatar(event.target.value);
+        console.log(avatar)
     } 
 
     function handleNameChange(event) {
@@ -23,12 +24,12 @@ export default function BacteriaView() {
     }
 
     function handleSubmit(event) {
+        alert(name)
         event.preventDefault();
     }
 
     return (
         <Container>
-            {console.log(avatar)}
             <Card.Group>
                 { images.map((image, index) => (
                     <Card key={index.toString()}>
