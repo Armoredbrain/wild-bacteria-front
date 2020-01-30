@@ -41,7 +41,6 @@ export default function InstrumentsList() {
         </div>
     ) : (
         <Container>
-        
             <Card.Group>
              { instruments.map((instrument, index) => (
                  <Card key={index.toString()}>
