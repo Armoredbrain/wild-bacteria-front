@@ -12,28 +12,28 @@ export default class Nav extends Component {
     return (
       <Menu>
         <Menu.Item
-        name='bacterias list'
-        active={activeItem === 'bacteriasList'}
-        onClick={this.handleItemClick}
-        href='/bacterias'
+            name='bacterias list'
+            active={activeItem === 'bacteriasList'}
+            onClick={this.handleItemClick}
+            href='/bacterias'
         >
             Bacterias
         </Menu.Item>
     
         <Menu.Item
-        name='instruments list'
-        active={activeItem === 'instrumentsList'}
-        onClick={this.handleItemClick}
-        href='/instruments'
+            name='instruments list'
+            active={activeItem === 'instrumentsList'}
+            onClick={this.handleItemClick}
+            href='/instruments'
         >
             Instruments
         </Menu.Item>
 
         <Menu.Item
-          name='teams list'
-          active={activeItem === 'teamsList'}
-          onClick={this.handleItemClick}
-          href='/teams'
+            name='teams list'
+            active={activeItem === 'teamsList'}
+            onClick={this.handleItemClick}
+            href='/teams'
         >
           Teams
         </Menu.Item>
