@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Container, Card, Image } from 'semantic-ui-react';
+import { Container, Card } from 'semantic-ui-react';
 
-export default function BacteriasList() {
-    const [bacterias, setBacterias] = useState([]);
+export default function TeamsList() {
+    const [teams, setTeams] = useState([]);
     const [status, setStatus] = useState(false);
 
     useEffect(() => {
         axios
-            .get(`https://127.0.0.1:8000/api/bacterias`)
+            .get(`https://127.0.0.1:8000/api/teams?pagination=false`)
             .then(res => {
-                setBacterias(res.data);
+                setTeams(res.data);
                 setStatus(true)
             });
     }, []);
@@ -28,13 +28,17 @@ export default function BacteriasList() {
     ) : (
         <Container>
             <Card.Group>
-             { bacterias.map((bacteria, index) => (
+             { teams.map((team, index) => (
                  <Card key={index.toString()}>
                      <Card.Content>
-                         <Card.Header>
-                            <h2>{bacteria.name}</h2>
-                         </Card.Header>
-                         <Image src={"assets/img/" + bacteria.avatar}/>
+                        <Card.Header>
+                        <h2>{team.name}</h2>
+                        </Card.Header>
+                        { team.bacterias.map((bacteria, index) => (
+                            <div key={index.toString()}>
+                                {bacteria.name}
+                            </div>    
+                        ))}
                      </Card.Content>
                  </Card>
              ))}
