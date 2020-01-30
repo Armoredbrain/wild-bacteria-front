@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Container, Card, Image } from 'semantic-ui-react';
 
 export default function AvatarSelector() {
-    const [avatar, setAvatar] = useState([]);
+    
     const images = [
         'assets/img/bacteria_1.jpg',
         'assets/img/bacteria_2.jpg',

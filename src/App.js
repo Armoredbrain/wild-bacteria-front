@@ -7,7 +7,7 @@ import {
 import BacteriasList from './components/BacteriasList';
 import InstrumentsList from './components/InstrumentsList';
 import TeamsList from './components/TeamsList';
-import AvatarSelector from './components/AvatarSelector';
+import BacteriaView from './BacteriaView';
 import 'semantic-ui-css/semantic.min.css';
 import { Container } from 'semantic-ui-react';
 
@@ -16,7 +16,7 @@ function App() {
     <Container>
       <Router>
         <Switch>
-          <Route exact path="/" component={AvatarSelector} />
+          <Route exact path="/" component={BacteriaView} />
             <Route exact path="/bacterias" component={BacteriasList} />
             <Route exact path="/instruments" component={InstrumentsList} />
             <Route exact path="/teams" component={TeamsList} />
