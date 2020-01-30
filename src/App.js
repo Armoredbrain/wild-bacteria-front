@@ -17,9 +17,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={BacteriaView} />
-            <Route exact path="/bacterias" component={BacteriasList} />
-            <Route exact path="/instruments" component={InstrumentsList} />
-            <Route exact path="/teams" component={TeamsList} />
+          <Route exact path="/bacterias" component={BacteriasList} />
+          <Route exact path="/instruments" component={InstrumentsList} />
+          <Route exact path="/teams" component={TeamsList} />
         </Switch>
       </Router>
     </Container>
