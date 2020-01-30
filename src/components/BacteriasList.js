@@ -8,7 +8,7 @@ export default function BacteriasList() {
 
     useEffect(() => {
         axios
-            .get(`https://127.0.0.1:8000/api/bacterias?pagination=false`)
+            .get(`https://127.0.0.1:8000/api/bacterias`)
             .then(res => {
                 setBacterias(res.data);
                 setStatus(true)
@@ -35,7 +35,6 @@ export default function BacteriasList() {
                             <h2>{bacteria.name}</h2>
                          </Card.Header>
                          <Image src={"assets/img/" + bacteria.avatar}/>
-                         <p>instrument : {bacteria.instrument.name}</p>
                      </Card.Content>
                  </Card>
              ))}
