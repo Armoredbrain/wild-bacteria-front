@@ -12,6 +12,15 @@ export default class Nav extends Component {
     return (
       <Menu>
         <Menu.Item
+            name='play'
+            active={activeItem === 'play'}
+            onClick={this.handleItemClick}
+            href='/'
+        >
+            Play
+        </Menu.Item>
+
+        <Menu.Item
             name='bacterias list'
             active={activeItem === 'bacteriasList'}
             onClick={this.handleItemClick}
