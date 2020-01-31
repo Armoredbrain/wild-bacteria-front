@@ -32,7 +32,9 @@ export default function BacteriaView() {
                 avatar: profileImage,
             })
             .then(function (response) {
+
                 alert("your bacteria is alive")
+
                 console.log(response);
             })
             .catch(function (error) {
