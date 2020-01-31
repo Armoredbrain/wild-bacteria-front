@@ -15,7 +15,7 @@ export default function BacteriaView() {
     ]
 
     const [profileImage, setProfileImage] = useState('');
-    const [profileName, setProfileName] = useState('')
+    const [profileName, setProfileName] = useState('your name here')
 
     function handleImageChange(profileImage) {
         setProfileImage(profileImage)
