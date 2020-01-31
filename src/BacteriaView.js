@@ -14,7 +14,7 @@ export default function BacteriaView() {
         'bacteria_5.jpg',
     ]
 
-    const [profileImage, setProfileImage] = useState('');
+    const [profileImage, setProfileImage] = useState('bacteria_1.jpg');
     const [profileName, setProfileName] = useState('your name here')
 
     function handleImageChange(profileImage) {
@@ -60,7 +60,16 @@ export default function BacteriaView() {
                 handleImageChange={handleImageChange} 
                 images={images}
             />
-            <Button onClick={handleValidate}>Validate</Button>
+            <br/>
+            <Button onClick={handleValidate}
+                style={{
+                    display: "block",
+                    marginRight: "auto",
+                    marginLeft: "auto"
+                }}
+            >
+                Validate
+            </Button>
         </Container>
     )
 }
